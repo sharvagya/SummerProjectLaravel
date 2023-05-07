@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body{
+    background: rgb(219, 219, 219);
+  }
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 20px;
+    background: #fff;
+  }
+  .logo{
+    display:flex;
+    align-items: center;
+  }
+  .logo a{
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 2rem 8rem 2rem 2rem;
+  }
+  .search_box{
+    display: flex;
+    align-items: center;
+  }
+  .search_box input{
+    padding: 9px;
+    width: 250px;
+    background: rgb(228, 228, 228);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .search_box i{
+    padding: 0.66rem;
+    cursor: pointer;
+    color: #fff;
+    background: #000;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .header-icons{
+    display: flex;
+    align-items: center;
+  }
+  .header-icons i{
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+  .header-icons .account{
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-icons .account img{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .social_icons{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social_icons a{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 50px;
+    line-height: 110px;
+    margin: 10px;
+    /* box-shadow: 1px 4px 2px 2px; */
+  }
+  .fa-square-facebook{
+    color: rgb(100, 100, 100);;
+  }
+  .fa-viber{
+    color: rgb(100, 100, 100);;
+  }
+  .fa-instagram{
+    color: rgb(100, 100, 100);;
+  }
+  .fa-envelope{
+    color: rgb(100, 100, 100);;
+  }
+  
+  
+  /* Side menubar section */
+  nav{
+    background: #fff;
+  }
+  .side_navbar{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    height: 87vh;
+  }
+  .side_navbar span{
+    color: rgb(0, 0, 0);
+    margin: 1rem 3rem;
+    font-size: 12px;
+  }
+  .side_navbar a{
+    width: 100%;
+    padding: 0.8rem 3rem;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(100, 100, 100);
+  }
+  .side_navbar a:hover{
+    background: rgb(235, 235, 235);
+  }
+  .side_navbar .active{
+    border-left: 2px solid rgb(100, 100, 100);
+  }
+  
+  /* Main Body Section */
+  .main-body{
+    width: 70%;
+    padding: 1rem;
+  }
+  .promo_card{
+    width: 100%;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 0.5rem 1rem 1rem 3rem;
+    background: rgb(37, 37, 37);
+  }
+  .promo_card h1, .promo_card span, button{
+    margin: 10px;
+  }
+  .promo_card button{
+    display: block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .history_lists{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  table{
+    background: #fff;
+    padding: 1rem;
+    text-align: left;
+    border-radius: 10px;
+  }
+  table td, th{
+    padding: 0.2rem 0.8rem;
+  }
+  table th{
+    font-size: 15px;
+  }
+  table td{
+    font-size: 13px;
+    color: rgb(100, 100, 100);
+  }
+  .button-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .button-options input[type="button"] {
+    display: inline-block;
+    width: 320px;
+    height: 35px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px; /* Add rounded edges to the buttons */
+    background: rgb(37, 37, 37);
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .form-body {
+    height: 513px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  }
+  .form-label{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .form-container{
+    justify-content: space-between;
+  }
+  
+  .form-label input {
+    width: 48%;
+  }
+  .form-body input[type=text], 
+  .form-body input[type=tel], 
+  .form-body select {
+    border-radius: 20px;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+  
+  .form-body input[type=submit] {
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .form-body label {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .form-body .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-body .form-group .form-field {
+    flex-basis: 48%;
+  }
+  
+  .form-body .form-group .form-field.address {
+    flex-basis: 100%;
+  }
+  
+  
+  /* Sidebar Section */
+  .sidebar{
+  
+    width: 15%;
+    padding: 1px;
+    background: #fff;
+    height: 87vh;
+  }
+  .sidebar span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: gray;
+    margin: 1rem 3rem;
+    font-size: 12px;
+  }
+  .sidebar h4{
+    margin-bottom: 1.5rem;
+  }
+  .sidebar a{
+    width: 100%;
+    padding: 1rem 3rem;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(100, 100, 100);
+  }
+  .sidebar .balance{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .balance .icon{
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: rgb(37, 37, 37);
+  }
+  .balance .info h5{
+    font-size: 16px;
+  }
+  .balance .info span{
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+  }
+  .balance .info i{
+    margin-right: 2px;
+  }
