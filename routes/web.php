@@ -20,6 +20,13 @@ Route::post('/login', [AdminController::class,'login'])->name('login.post');
 
 Route::get('/dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
 
+Route::get('/viewEmployee', [EmployeeController::class, 'showEmployeeList'])->name('viewemployee');
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
+Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
+
+
+
 
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class EmployeeController extends Controller
 {
@@ -40,6 +42,11 @@ public function showEmployeeForm()
         // Redirect the user to the dashboard page
         return redirect('/dashboard')->with('success', 'Employee has been added');
     }
+    public function showEmployeeList()
+        {
+            $employees = DB::table('employees')->get();
+             return view('viewEmployee', compact('employees'));
+        }
 
 }
 
