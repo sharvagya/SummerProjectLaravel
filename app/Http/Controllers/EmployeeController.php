@@ -53,6 +53,18 @@ public function showEmployeeForm()
             $employee->delete();
             return redirect()->route('dashboard')->with('success', 'Employee deleted successfully');
         }
-        
+        public function edit($id)
+        {
+            $employee = Employee::findOrFail($id);
+             return view('edit', compact('employee'));
+        }
+        public function update(Request $request, $id)
+        {
+            $employee = Employee::findOrFail($id);
+            $employee->update($request->all());
+            return redirect()->route('viewEmployee')->with('success', 'Employee updated successfully.');
+        }
+
+
 }
 
