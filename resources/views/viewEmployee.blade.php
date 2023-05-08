@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help</title>
+    <title>View Employee</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
@@ -65,8 +65,15 @@
               <td>{{ $employee->status }}</td>
               <td>{{ $employee->address }}</td>
               <td>
-                  <a href="{{ route('employee.edit', $employee->id) }}">Edit</a> |
-                  <a href="{{ route('employee.delete', $employee->id) }}">Delete</a>
+                <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" class="button-form">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this employee?')"><i class="fa fa-trash"></i></button>
+              </form>
+              <form action="{{ route('employee.edit', $employee->id) }}" method="GET" class="button-form">
+                  @csrf
+                  <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></button>
+              </form>
               </td>
           </tr>
           @endforeach

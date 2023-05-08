@@ -54,9 +54,9 @@
         <br></div>
         <label for="gender">Gender:</label>
         <select id="gender" name="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="others">Others</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
         </select>
         <br>
         <label for="date-of-birth">Date of Birth:</label>
@@ -71,9 +71,9 @@
         <br></div>
         <label for="status">Stauts:</label>
         <select id="status" name="status" required>
-            <option value="male">Active</option>
-            <option value="female">Inactive</option>
-            <option value="others">On Leave</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="On Leave">On Leave</option>
           </select><br>       
         <label for="address">Address:</label>
         <input type="text" id="address" name="address" required></textarea>

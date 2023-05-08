@@ -25,6 +25,12 @@ Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('em
 Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
 Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
 
+// Edit employee form
+Route::get('/employees/{id}/edit', 'App\Http\Controllers\EmployeeController@edit')->name('employee.edit');
+Route::put('/employees/{id}', 'App\Http\Controllers\EmployeeController@update')->name('employee.update');
+Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destroy')->name('employee.destroy');
+
+
 
 
 

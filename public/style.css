@@ -265,7 +265,35 @@
   .form-body .form-group .form-field.address {
     flex-basis: 100%;
   }
-  
+  .button-form {
+    display: inline-block;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.fa-trash {
+    color: #fff;
+}
+
+.fa-pencil {
+    color: #fff;
+}
   
   /* Sidebar Section */
   .sidebar{

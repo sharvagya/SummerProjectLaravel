@@ -47,6 +47,12 @@ public function showEmployeeForm()
             $employees = DB::table('employees')->get();
              return view('viewEmployee', compact('employees'));
         }
-
+        public function destroy($id)
+        {
+            $employee = Employee::find($id);
+            $employee->delete();
+            return redirect()->route('dashboard')->with('success', 'Employee deleted successfully');
+        }
+        
 }
 
