@@ -19,4 +19,9 @@ class Employee extends Model
         'status',
         'address',
     ];
+    public function salaries()
+{
+    return $this->hasMany(Salary::class);
+}
+
 }

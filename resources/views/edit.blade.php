@@ -55,6 +55,7 @@
             <select name="gender" id="gender">
                 <option value="male" {{ $employee->gender == 'male' ? 'selected' : '' }}>Male</option>
                 <option value="female" {{ $employee->gender == 'female' ? 'selected' : '' }}>Female</option>
+                <option value="others" {{ $employee->gender == 'others' ? 'selected' : '' }}>Others</option>
             </select>
         </div>
         <div>

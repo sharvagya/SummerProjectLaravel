@@ -30,6 +30,7 @@ Route::get('/employees/{id}/edit', 'App\Http\Controllers\EmployeeController@edit
 Route::put('/employees/{id}', 'App\Http\Controllers\EmployeeController@update')->name('employee.update');
 Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destroy')->name('employee.destroy');
 
+Route::resource('salary', SalaryController::class);
 
 
 
