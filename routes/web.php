@@ -31,6 +31,8 @@ Route::put('/employees/{id}', 'App\Http\Controllers\EmployeeController@update')-
 Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destroy')->name('employee.destroy');
 
 Route::resource('salary', SalaryController::class);
+Route::get('/salary', 'SalaryController@index')->name('salary');
+
 
 
 
