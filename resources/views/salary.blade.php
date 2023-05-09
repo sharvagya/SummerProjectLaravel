@@ -38,6 +38,7 @@
 </nav>
 <div class="main-body">
   <h1>Salary List</h1>
+  <div class="salary-table">
   <table class="table">
     <thead>
         <tr>
@@ -53,15 +54,28 @@
             <tr>
                 <td>{{ $salary->id }}</td>
                 <td>{{ $salary->date }}</td>
-                <td>{{ $salary->employee->name }}</td>
+                <td>{{ $salary->employee->first_name }} {{ $salary->employee->last_name }}</td>
                 <td>{{ $salary->status }}</td>
                 <td>{{ $salary->amount }}</td>
+                <td>
+                  <form action="{{ route('salary.destroy', $salary->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="salary_id" value="{{ $salary->id }}">
+                    <button type="submit" class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </form>
+                  <a href="{{ route('salary.edit', $salary->id) }}" class="btn btn-sm btn-primary">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                </td>
             </tr>
         @endforeach
     </tbody>
 </table>
   
-  
+  </div>
 </div>
 <div class="sidebar">
     <span>Supervisors</span>

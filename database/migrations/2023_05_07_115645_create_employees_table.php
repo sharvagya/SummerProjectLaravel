@@ -21,12 +21,15 @@ class CreateEmployeesTable extends Migration
             $table->timestamps();
         });
         DB::unprepared('
-            CREATE TRIGGER tr_employee_insert
-            AFTER INSERT
-            ON employees
-            FOR EACH ROW
-            INSERT INTO mydb.salaries (employee_id, name) VALUES (NEW.id, CONCAT(NEW.first_name, " ", NEW.last_name))
-        ');
+        CREATE TRIGGER tr_employee_insert
+        AFTER INSERT
+        ON employees
+        FOR EACH ROW
+        INSERT INTO mydb.salaries (employee_id, name, date, created_at, updated_at)
+        VALUES (NEW.id, CONCAT(NEW.first_name, " ", NEW.last_name), NULL, NOW(), NOW(), NOW());
+    ');
+    
+
     }
 
     public function down()

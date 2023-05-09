@@ -57,4 +57,5 @@ public function destroy($id)
     return redirect()->route('salary.index');
 }
 
+
 }

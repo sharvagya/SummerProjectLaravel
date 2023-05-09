@@ -44,6 +44,7 @@ public function showEmployeeForm()
         $salary->employee_id = $employee->id;
         $salary->name = $employee->first_name . ' ' . $employee->last_name;
         $employee->save();
+        $employee->createSalaryRecord();
 
         // Redirect the user to the dashboard page
         return redirect('/dashboard')->with('success', 'Employee has been added');
