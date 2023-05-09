@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Salary;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SalaryController extends Controller
 {
     public function index()
 {
     $salaries = Salary::all();
-    return view('salary.index', compact('salaries'));
+    return view('salary', compact('salaries'));
 }
 
 public function create()

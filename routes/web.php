@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SalaryController;
 
 
 Route::view('/','addemployee');
@@ -21,7 +22,7 @@ Route::post('/login', [AdminController::class,'login'])->name('login.post');
 Route::get('/dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
 
 Route::get('/viewEmployee', [EmployeeController::class, 'showEmployeeList'])->name('viewemployee');
-Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
+Route::post('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
 Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
 Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
 
@@ -31,7 +32,7 @@ Route::put('/employees/{id}', 'App\Http\Controllers\EmployeeController@update')-
 Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destroy')->name('employee.destroy');
 
 Route::resource('salary', SalaryController::class);
-Route::get('/salary', 'SalaryController@index')->name('salary');
+Route::get('/salary', 'App\Http\Controllers\SalaryController@index')->name('salary');
 
 
 

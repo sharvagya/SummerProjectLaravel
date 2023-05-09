@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Salary;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -37,6 +38,11 @@ public function showEmployeeForm()
         $employee->working_title = $request->input('working-title');
         $employee->status = $request->input('status');
         $employee->address = $request->input('address');
+        $employee->save();
+
+        $salary = new Salary;
+        $salary->employee_id = $employee->id;
+        $salary->name = $employee->first_name . ' ' . $employee->last_name;
         $employee->save();
 
         // Redirect the user to the dashboard page
