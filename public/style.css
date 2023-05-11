@@ -294,6 +294,15 @@
 .fa-pencil {
     color: #fff;
 }
+.salary-table {
+  width: 100%;
+}
+.sal-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
   
   /* Sidebar Section */
   .sidebar{

@@ -31,15 +31,15 @@
             <a href="index.html" >Dashboard</a>
             <a href="employeeinfo.html">Employee Info</a>
             <a href="#">Attendance</a>
-            <a href="#">Salary</a>
+            <a href="#" class="active">Salary</a>
             <a href="#">Employee Data</a>
-            <a href="#" class="active">Help</a>
+            <a href="#" >Help</a>
           </div>
 </nav>
 <div class="main-body">
   <h1>Salary List</h1>
   <div class="salary-table">
-  <table class="table">
+  <table class="sal-table">
     <thead>
         <tr>
             <th>ID</th>
@@ -58,16 +58,16 @@
                 <td>{{ $salary->status }}</td>
                 <td>{{ $salary->amount }}</td>
                 <td>
-                  <form action="{{ route('salary.destroy', $salary->id) }}" method="POST">
+                  <form action="{{ route('salary.destroy', $salary->id) }}" method="POST" class="button-form">
                     @csrf
                     @method('DELETE')
-                    <input type="hidden" name="salary_id" value="{{ $salary->id }}">
-                    <button type="submit" class="btn btn-sm btn-danger">
+                    <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this salary record?')"><i class="fa fa-trash"></i></button>
                       <i class="fas fa-trash"></i>
                     </button>
                   </form>
-                  <a href="{{ route('salary.edit', $salary->id) }}" class="btn btn-sm btn-primary">
-                    <i class="fas fa-edit"></i>
+                  <a href="{{ route('salary.edit', $salary->id) }}" cmethod="GET" class="button-form">
+                    @csrf
+                    <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></button>
                   </a>
                 </td>
             </tr>
