@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Salary;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -36,7 +37,7 @@ public function edit($id)
 {
     $salary = Salary::find($id);
     $employees = Employee::all();
-    return view('salary.edit', compact('salary', 'employees'));
+    return view('editsalary', compact('salary', 'employees'));
 }
 
 public function update(Request $request, $id)
@@ -47,14 +48,14 @@ public function update(Request $request, $id)
     $salary->status = $request->input('status');
     $salary->amount = $request->input('amount');
     $salary->save();
-    return redirect()->route('salary.index');
+    return redirect()->route('salary');
 }
 
 public function destroy($id)
 {
     $salary = Salary::find($id);
     $salary->delete();
-    return redirect()->route('salary.index');
+    return redirect()->route('salary');
 }
 
 
