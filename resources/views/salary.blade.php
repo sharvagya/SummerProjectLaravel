@@ -28,7 +28,7 @@
         <nav>
           <div class="side_navbar">
             <span>Main Menu</span>
-            <a href="index.html" >Dashboard</a>
+            <a href="{{ route('dashboard') }}" >Dashboard</a>
             <a href="employeeinfo.html">Employee Info</a>
             <a href="#">Attendance</a>
             <a href="#" class="active">Salary</a>

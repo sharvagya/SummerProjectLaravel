@@ -26,7 +26,7 @@ public function store(Request $request)
 {
     $salary = new Salary();
     $salary->date = $request->input('date');
-    $salary->employee_name = $request->input('employee_name');
+    $salary->name = $employee->first_name . ' ' . $employee->last_name;
     $salary->status = $request->input('status');
     $salary->amount = $request->input('amount');
     $salary->save();
@@ -42,14 +42,31 @@ public function edit($id)
 
 public function update(Request $request, $id)
 {
-    $salary = Salary::find($id);
-    $salary->date = $request->input('date');
-    $salary->employee_name = $request->input('employee_name');
+    $request->validate([
+        'status' => 'required',
+        'amount' => 'required|numeric',
+    ]);
+
+    $salary = Salary::findOrFail($id);
     $salary->status = $request->input('status');
     $salary->amount = $request->input('amount');
+
+    if ($request->has('date')) {
+        $salary->date = $request->input('date');
+    }
+
+    // Retrieve the employee associated with the salary record
+    $employee = Employee::findOrFail($salary->employee_id);
+
+    // Set the name attribute of the salary record
+    $salary->name = $employee->first_name . ' ' . $employee->last_name;
+
     $salary->save();
-    return redirect()->route('salary');
+
+    return redirect()->route('salary')->with('success', 'Salary record updated successfully.');
 }
+
+
 
 public function destroy($id)
 {
