@@ -25,7 +25,7 @@
         <input type="password" placeholder="" id="password" name="password"/>
         <input type="submit" value="Submit" />
       <closeform></closeform></form>
-          <p class="para-2">Already have an account? <a href="login.html">Login here</a></p>
+          <p class="para-2">Already have an account? <a href="{{ route('login') }}">Login here</a></p>
     </div>
   </body>
 </html>

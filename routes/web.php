@@ -34,6 +34,10 @@ Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destro
 Route::resource('salary', SalaryController::class);
 Route::get('/salary', 'App\Http\Controllers\SalaryController@index')->name('salary');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::post('/logout', [Adminontroller::class, 'logout'])->name('logout');
+});
 
 
 

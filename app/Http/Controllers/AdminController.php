@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 
 class AdminController extends Controller
@@ -42,16 +43,41 @@ class AdminController extends Controller
     }
     public function login(Request $request)
     {
+        // $request->validate([
+        //     'username' => 'required',
+        //     'password' => 'required',
+        // ]);
+
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
-        }
-        else{
-            //return redirect()->route('userlogin')->withErrors(['error' => 'Invalid username or password']);
-            return redirect()->route('login')->with('error', 'Invalid username or password');
-
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
         }
 
+        throw ValidationException::withMessages([
+            'username' => 'Invalid credentials.',
+        ]);
     }
-}
+
+    protected function guard()
+    {
+        return Auth::guard('admins');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+    
+        if (Auth::guard('admins')->attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('/dashboard');
+        }
+    
+        return redirect()->back()->withInput($request->only('username'))->withErrors([
+            'username' => 'These credentials do not match our records.',
+        ]);
+    }
+    
+    }
+

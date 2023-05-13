@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +17,7 @@
       <closeform></closeform></form>
     </div>
     <p class="para-2">
-      Not have an account? <a href="signup.html">Sign Up Here</a>
+      Not have an account? <a href="{{ route('signup') }}">Sign Up Here</a>
     </p>
   </body>
 </html>

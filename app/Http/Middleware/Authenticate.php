@@ -14,4 +14,17 @@ class Authenticate extends Middleware
     {
         return $request->expectsJson() ? null : route('login');
     }
+    public function attempt(Request $request)
+{
+    $credentials = $request->only('username', 'password');
+    $username = $credentials['username'];
+    $password = $credentials['password'];
+
+    if (Auth::guard('admin')->attempt(['username' => $username, 'password' => $password])) {
+        // Authentication passed...
+        return redirect()->intended('dashboard');
+    }
+    return redirect()->back()->withInput()->withErrors(['username' => 'Invalid username or password']);
+}
+
 }
