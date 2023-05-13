@@ -22,7 +22,8 @@ class Authenticate extends Middleware
 
     if (Auth::guard('admin')->attempt(['username' => $username, 'password' => $password])) {
         // Authentication passed...
-        return redirect()->intended('dashboard');
+        return view('dashboard')->with('user', auth()->user());
+
     }
     return redirect()->back()->withInput()->withErrors(['username' => 'Invalid username or password']);
 }

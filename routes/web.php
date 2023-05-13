@@ -8,7 +8,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SalaryController;
 
 
-Route::view('/','addemployee');
+Route::view('/','login');
 
 Route::get('/addemployee', [EmployeeController::class, 'showEmployeeForm'])->name('addemployee');
 Route::post('/addemployee', [EmployeeController::class, 'store'])->name('addemployee.post');
@@ -34,10 +34,9 @@ Route::delete('/employees/{id}', 'App\Http\Controllers\EmployeeController@destro
 Route::resource('salary', SalaryController::class);
 Route::get('/salary', 'App\Http\Controllers\SalaryController@index')->name('salary');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::post('/logout', [Adminontroller::class, 'logout'])->name('logout');
-});
+
+Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+
 
 
 

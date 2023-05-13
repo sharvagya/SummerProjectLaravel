@@ -18,8 +18,9 @@
 
     <div class="header-icons">
       <div class="account">
-        <img src="C:\Users\dell\Desktop\lab2\ModelConstructions\images\user.png" alt="">
-        <label>admin</label>
+       
+        
+        
       </div>
     </div>
   </header>
@@ -33,6 +34,12 @@
         <a href="#">Salary</a>
         <a href="#">Employee Data</a>
         <a href="help.html">Help</a>
+        
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <input type="submit" value="logout" class="btn-logout">
+      </form>
+        
       </div>
     </nav>
 
