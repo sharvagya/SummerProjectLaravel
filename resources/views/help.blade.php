@@ -20,7 +20,14 @@
     
         <div class="header-icons">
           <div class="account">
-            <img src="C:\Users\dell\Desktop\lab2\ModelConstructions\images\user.png" alt="">
+                               {{-- @if(Auth::guard('admin')->check()) --}}
+         
+        @auth
+        <p>{{ auth()->user()->username }}</p>
+    @endauth
+    {{-- @endif --}}
+    
+    
           </div>
         </div>
       </header>
@@ -28,7 +35,7 @@
         <nav>
           <div class="side_navbar">
             <span>Main Menu</span>
-            <a href="index.html" >Dashboard</a>
+            <a href="{{ route('dashboard') }}" >Dashboard</a>
             <a href="employeeinfo.html">Employee Info</a>
             <a href="#">Attendance</a>
             <a href="#">Salary</a>

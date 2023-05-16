@@ -9,6 +9,16 @@ use App\Http\Controllers\SalaryController;
 
 
 Route::view('/','login');
+Route::get('/help', function () {
+    return view('help');
+})->name('help');
+Route::get('/employeeinfo', function () {
+    return view('employeeinfo');
+})->name('employeeinfo');
+Route::get('/addEmployee', function () {
+    return view('addEmployee');
+})->name('addEmployee');
+
 
 Route::get('/addemployee', [EmployeeController::class, 'showEmployeeForm'])->name('addemployee');
 Route::post('/addemployee', [EmployeeController::class, 'store'])->name('addemployee.post');
@@ -21,7 +31,7 @@ Route::post('/login', [AdminController::class,'login'])->name('login.post');
 
 Route::get('/dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
 
-Route::get('/viewEmployee', [EmployeeController::class, 'showEmployeeList'])->name('viewemployee');
+Route::get('/viewEmployee', [EmployeeController::class, 'showEmployeeList'])->name('viewEmployee');
 Route::post('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
 Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
 Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
@@ -35,7 +45,8 @@ Route::resource('salary', SalaryController::class);
 Route::get('/salary', 'App\Http\Controllers\SalaryController@index')->name('salary');
 
 
-Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
 
 
 

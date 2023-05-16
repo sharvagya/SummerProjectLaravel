@@ -58,7 +58,7 @@ public function showEmployeeForm()
         {
             $employee = Employee::find($id);
             $employee->delete();
-            return redirect()->route('dashboard')->with('success', 'Employee deleted successfully');
+            return redirect()->route('viewEmployee')->with('success', 'Employee deleted successfully');
         }
         public function edit($id)
         {

@@ -18,7 +18,12 @@
 
     <div class="header-icons">
       <div class="account">
-       
+        {{-- @if(Auth::guard('admin')->check()) --}}
+         
+        @auth
+            <p>{{ auth()->user()->username }}</p>
+        @endauth
+        {{-- @endif --}}
         
         
       </div>
@@ -29,11 +34,11 @@
       <div class="side_navbar">
         <span>Main Menu</span>
         <a href="#" class="active">Dashboard</a>
-        <a href="employeeinfo.html">Employee Info</a>
+        <a href="{{route('employeeinfo')}}">Employee Info</a>
         <a href="#">Attendance</a>
-        <a href="#">Salary</a>
+        <a href="{{route('salary')}}">Salary</a>
         <a href="#">Employee Data</a>
-        <a href="help.html">Help</a>
+        <a href="{{route('help')}}">Help</a>
         
         <form action="{{ route('logout') }}" method="POST">
           @csrf
@@ -48,7 +53,7 @@
       <div class="promo_card">
         <h1>ModelConstructions Dashboard</h1>
         <span>Streamlined solution for HR practices</span>
-        <button>Learn More</button>
+        <button><a href="{{route('help')}}">Learn More</a></button>
       </div>
 
       <div class="history_lists">
