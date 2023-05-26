@@ -14,7 +14,7 @@ class Admin extends Model implements Authenticatable
 {
     use HasApiTokens,HasFactory, Notifiable;
     protected $table = 'admins';
-    protected $guard = 'admin';
+    protected $guard = 'web';
     
 
 

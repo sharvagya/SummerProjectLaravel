@@ -39,12 +39,12 @@
         <a href="{{route('salary')}}">Salary</a>
         <a href="#">Employee Data</a>
         <a href="{{route('help')}}">Help</a>
-        
         <form action="{{ route('logout') }}" method="POST">
           @csrf
-          <input type="submit" value="logout" class="btn-logout">
+          <button class="logout-button" type="submit">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
       </form>
-        
       </div>
     </nav>
 

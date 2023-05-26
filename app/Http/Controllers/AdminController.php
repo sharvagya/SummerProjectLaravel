@@ -17,8 +17,10 @@ class AdminController extends Controller
 
     public function showLoginForm()
     {
+    
         return view('login');
     }
+    
 
     public function register(Request $request)
     {

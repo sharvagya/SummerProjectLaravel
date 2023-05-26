@@ -41,6 +41,10 @@
             <a href="#">Salary</a>
             <a href="#">Employee Data</a>
             <a href="#" >Help</a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <input type="submit" value="logout" class="btn-logout">
+          </form>
           </div>
 </nav>
 <div class="main-body">
@@ -77,7 +81,7 @@
                   @method('DELETE')
                   <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this employee?')"><i class="fa fa-trash"></i></button>
               </form>
-              <form action="{{ route('employee.edit', $employee->id) }}" method="GET" class="button-form">
+              <form action="{{ route('employee.edit', $employee->id) }}" method="POST" class="button-form">
                   @csrf
                   <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></button>
               </form>
